@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
+    <title>Our Works - Laser Cutting Portfolio | Sabarin Laser Tech Trichy</title>
+    <meta name="description" content="View our completed laser cutting works, SS & MS gates, glass railings, handrails, shed works, and gold letters projects in Trichy. Quality craftsmanship with 10+ years experience.">
+    <meta name="keywords" content="laser cutting portfolio trichy, ss gate works trichy, ms gate works, glass railing portfolio, handrail works trichy, shed works portfolio, gold letters trichy, sabarin laser tech works">
+    <meta name="author" content="Sabarin Laser Tech">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Our Works - Laser Cutting Portfolio | Sabarin Laser Tech">
+    <meta property="og:description" content="Browse our portfolio of laser cutting, gates, railings, and metal fabrication projects in Trichy.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://sabarinlasertech.com/work.html">
+    <meta property="og:image" content="https://sabarinlasertech.com/img/logoslt.png">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Our Works - Laser Cutting Portfolio | Sabarin Laser Tech">
+    <meta name="twitter:description" content="Quality laser cutting and metal fabrication works in Trichy">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://sabarinlasertech.com/work.html">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="img/logoslt.png">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f5e6d3;
+            overflow-x: hidden;
+        }
+
+        /* Header Navigation */
+        .header {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            display: flex;
+            gap: 15px;
+        }
+
+        .logo-header {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            background-color: rgba(26, 58, 46, 0.9);
+            padding: 10px 20px;
+            border-radius: 25px;
+            box-shadow: 0 4px 15px rgba(26, 58, 46, 0.3);
+        }
+
+        .logo-header img {
+            height: 40px;
+            width: auto;
+        }
+
+        .logo-header span {
+            color: white;
+            font-size: 16px;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .nav-btn {
+            background-color: #1a3a2e;
+            color: white;
+            border: none;
+            padding: 12px 28px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(26, 58, 46, 0.3);
+        }
+
+        .nav-btn:hover {
+            background-color: #2d5a4a;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(26, 58, 46, 0.4);
+        }
+
+        /* Page Header */
+        .page-header {
+            padding: 120px 20px 60px;
+            text-align: center;
+            background: linear-gradient(135deg, #1a3a2e 0%, #2d5a4a 100%);
+            color: white;
+        }
+
+        .page-header h1 {
+            font-size: 56px;
+            font-weight: 800;
+            margin-bottom: 15px;
+            letter-spacing: 3px;
+        }
+
+        .page-header p {
+            font-size: 20px;
+            font-weight: 300;
+            letter-spacing: 2px;
+        }
+
+        /* Works Gallery Section */
+        .works-gallery-section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 80px 20px;
+        }
+
+        .category-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-bottom: 50px;
+        }
+
+        .category-tab {
+            background-color: #e8dcc8;
+            color: #1a3a2e;
+            border: 2px solid #1a3a2e;
+            padding: 12px 30px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(26, 58, 46, 0.15);
+        }
+
+        .category-tab:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(26, 58, 46, 0.25);
+        }
+
+        .category-tab.active {
+            background: linear-gradient(135deg, #1a3a2e 0%, #2d5a4a 100%);
+            color: white;
+        }
+
+        .works-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .work-item {
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(26, 58, 46, 0.15);
+            transition: all 0.3s ease;
+            display: none;
+            aspect-ratio: 1;
+            background: #e8dcc8;
+        }
+
+        .work-item.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .work-item:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 35px rgba(26, 58, 46, 0.3);
+        }
+
+        .work-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .work-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(26, 58, 46, 0.95), transparent);
+            color: white;
+            padding: 25px;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+
+        .work-item:hover .work-overlay {
+            transform: translateY(0);
+        }
+
+        .work-overlay h4 {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            letter-spacing: 1px;
+        }
+
+        .work-overlay p {
+            font-size: 14px;
+            font-weight: 400;
+            opacity: 0.95;
+        }
+
+        /* Footer Section */
+        .footer-section {
+            text-align: center;
+            padding: 60px 20px 30px;
+            background: linear-gradient(135deg, #1a3a2e 0%, #2d5a4a 100%);
+            color: white;
+        }
+
+        .footer-text {
+            font-size: 18px;
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+
+        .footer-btn {
+            background-color: #e8dcc8;
+            color: #1a3a2e;
+            border: none;
+            padding: 15px 50px;
+            border-radius: 30px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 600;
+            margin: 10px;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            box-shadow: 0 6px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .footer-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 35px rgba(0, 0, 0, 0.3);
+        }
+
+        .copyright {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            font-size: 14px;
+            font-weight: 500;
+            letter-spacing: 1px;
+        }
+
+        /* Mobile Responsive - IMPROVED */
+        @media (max-width: 768px) {
+            /* Fixed Header Navigation */
+            .header {
+                top: 70px;
+                right: 50%;
+                transform: translateX(50%);
+                gap: 8px;
+                flex-direction: row;
+                width: auto;
+            }
+
+            .logo-header {
+                top: 10px;
+                left: 50%;
+                transform: translateX(-50%);
+                padding: 8px 15px;
+                width: auto;
+                max-width: 90%;
+            }
+
+            .logo-header img {
+                height: 30px;
+            }
+
+            .logo-header span {
+                font-size: 11px;
+                white-space: nowrap;
+            }
+
+            .nav-btn {
+                padding: 8px 16px;
+                font-size: 10px;
+            }
+
+            /* Page Header */
+            .page-header {
+                padding: 110px 20px 40px;
+            }
+
+            .page-header h1 {
+                font-size: 32px;
+                letter-spacing: 2px;
+            }
+
+            .page-header p {
+                font-size: 16px;
+                letter-spacing: 1px;
+            }
+
+            /* Works Gallery Section */
+            .works-gallery-section {
+                padding: 40px 15px;
+            }
+
+            /* Category Tabs - 2 Column Layout */
+            .category-tabs {
+                gap: 8px;
+                margin-bottom: 30px;
+                justify-content: center;
+            }
+
+            .category-tab {
+                padding: 10px 18px;
+                font-size: 11px;
+                letter-spacing: 0.5px;
+                flex: 0 0 calc(50% - 4px);
+                max-width: calc(50% - 4px);
+                text-align: center;
+            }
+
+            /* Works Grid - 2 Columns on Mobile */
+            .works-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 12px;
+            }
+
+            .work-item {
+                border-radius: 10px;
+            }
+
+            /* Mobile: Show overlay on tap, not hover */
+            .work-overlay {
+                transform: translateY(0);
+                background: linear-gradient(to top, rgba(26, 58, 46, 0.85), transparent);
+                padding: 15px;
+            }
+
+            .work-overlay h4 {
+                font-size: 13px;
+                margin-bottom: 4px;
+                letter-spacing: 0.5px;
+            }
+
+            .work-overlay p {
+                font-size: 10px;
+            }
+
+            /* Footer Section */
+            .footer-section {
+                padding: 40px 15px 20px;
+            }
+
+            .footer-text {
+                font-size: 15px;
+                margin-bottom: 15px;
+            }
+
+            .footer-btn {
+                padding: 12px 35px;
+                font-size: 13px;
+                margin: 8px;
+            }
+
+            .copyright {
+                font-size: 11px;
+                margin-top: 20px;
+                padding-top: 15px;
+            }
+        }
+
+        /* Extra Small Devices */
+        @media (max-width: 380px) {
+            .logo-header span {
+                font-size: 10px;
+            }
+
+            .nav-btn {
+                padding: 7px 12px;
+                font-size: 9px;
+            }
+
+            .page-header h1 {
+                font-size: 28px;
+            }
+
+            .category-tab {
+                padding: 8px 14px;
+                font-size: 10px;
+            }
+
+            .works-grid {
+                gap: 10px;
+            }
+
+            .work-overlay h4 {
+                font-size: 12px;
+            }
+
+            .work-overlay p {
+                font-size: 9px;
+            }
+        }
+
+        /* Tablet Responsive */
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .works-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Logo Header -->
+    <div class="logo-header">
+        <img src="img/logoslt.png" alt="Sabarin Laser Tech Logo">
+        <span>SABARIN LASER TECH</span>
+    </div>
+
+    <!-- Header Navigation -->
+    <div class="header">
+        <button class="nav-btn" onclick="window.location.href='index.html'">HOME</button>
+        <button class="nav-btn" onclick="window.location.href='work.html'">WORKS</button>
+        <button class="nav-btn" onclick="window.location.href='contact.html'">CONTACT</button>
+    </div>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <h1>OUR WORKS</h1>
+        <p>எங்கள் சிறப்பு வேலைகள்</p>
+    </section>
+
+    <!-- Works Gallery Section -->
+    <section class="works-gallery-section">
+        <div class="category-tabs">
+            <button class="category-tab active" onclick="filterWorks('all')">ALL WORKS</button>
+            <button class="category-tab" onclick="filterWorks('laser')">LASER CUTTING</button>
+            <button class="category-tab" onclick="filterWorks('gate')">GATES</button>
+            <button class="category-tab" onclick="filterWorks('railing')">RAILINGS</button>
+            <button class="category-tab" onclick="filterWorks('shed')">SHEDS</button>
+            <button class="category-tab" onclick="filterWorks('letters')">LETTERS</button>
+        </div>
+
+        <div class="works-grid">
+            <!-- Laser Cutting Works -->
+            <div class="work-item active" data-category="laser">
+                <img src="img/ls1.jpeg" alt="Laser Cut Work">
+                <div class="work-overlay">
+                    <h4>LASER CUT DESIGN</h4>
+                    <p>சிறப்பு லேசர் கட் வேலை</p>
+                </div>
+            </div>
+
+            <div class="work-item active" data-category="laser">
+                <img src="img/ls2.jpeg" alt="Laser Cut Work">
+                <div class="work-overlay">
+                    <h4>DECORATIVE PANEL</h4>
+                    <p>அலங்கார பேனல் வேலை</p>
+                </div>
+            </div>
+
+            <div class="work-item active" data-category="laser">
+                <img src="img/ls3.jpeg" alt="Laser Cut Work">
+                <div class="work-overlay">
+                    <h4>CUSTOM PATTERN</h4>
+                    <p>தனிப்பயன் வடிவமைப்பு</p>
+                </div>
+            </div>
+
+            <!-- Gate Works -->
+            <div class="work-item active" data-category="gate">
+                <img src="img/ssg1.jpeg" alt="Gate Work">
+                <div class="work-overlay">
+                    <h4>SS MAIN GATE</h4>
+                    <p>எஸ்.எஸ் பிரதான கேட்</p>
+                </div>
+            </div>
+
+            <div class="work-item active" data-category="gate">
+                <img src="img/msg1.jpeg"alt="Gate Work">
+                <div class="work-overlay">
+                    <h4>MS GATE</h4>
+                    <p>எம்.எஸ் கேட் வேலை</p>
+                </div>
+            </div>
+
+            <div class="work-item active" data-category="gate">
+                <img src="img/designer1.jpeg" alt="Gate Work">
+                <div class="work-overlay">
+                    <h4>DESIGNER GATE</h4>
+                    <p>டிசைனர் கேட் வேலை</p>
+                </div>
+            </div>
+
+            <!-- Railing Works -->
+            <div class="work-item active" data-category="railing">
+                <img src="img/g1.png" alt="Railing Work">
+                <div class="work-overlay">
+                    <h4>GLASS RAILING</h4>
+                    <p>கண்ணாடி ரெயிலிங் வேலை</p>
+                </div>
+            </div>
+
+            <div class="work-item active" data-category="railing">
+                <img src="img/Modern Ss Handrail D.png" alt="Railing Work">
+                <div class="work-overlay">
+                    <h4>SS HANDRAIL</h4>
+                    <p>எஸ்.எஸ் கைப்பிடி வேலை</p>
+                </div>
+            </div>
+
+            <div class="work-item active" data-category="railing">
+                <img src="img/msr1.jpeg" alt="Railing Work">
+                <div class="work-overlay">
+                    <h4>MS RAILING</h4>
+                    <p>எம்.எஸ் ரெயிலிங் வேலை</p>
+                </div>
+            </div>
+
+            <!-- Shed Works -->
+            <div class="work-item active" data-category="shed">
+                <img src="img/SHED WORKS CONTRACTO.png" alt="Shed Work">
+                <div class="work-overlay">
+                    <h4>INDUSTRIAL SHED</h4>
+                    <p>தொழிற்சாலை ஷெட் வேலை</p>
+                </div>
+            </div>
+
+            <div class="work-item active" data-category="shed">
+                <img src="img/ROOFING (1).jpeg" alt="Shed Work">
+                <div class="work-overlay">
+                    <h4>ROOFING WORK</h4>
+                    <p>கூரை வேலை</p>
+                </div>
+            </div>
+
+            <div class="work-item active" data-category="shed">
+                <img src="img/Roof Shed Design Ind.png" alt="Shed Work">
+                <div class="work-overlay">
+                    <h4>CUSTOM SHED</h4>
+                    <p>தனிப்பயன் ஷெட் வேலை</p>
+                </div>
+            </div>
+
+            <!-- Letter Works -->
+            <div class="work-item active" data-category="letters">
+                <img src="img/letter1 (2).jpeg" alt="Letter Work">
+                <div class="work-overlay">
+                    <h4>SS LETTERS</h4>
+                    <p>எஸ்.எஸ் எழுத்துகள்</p>
+                </div>
+            </div>
+
+            <div class="work-item active" data-category="letters">
+                <img src="img/letter4.jpeg" alt="Letter Work">
+                <div class="work-overlay">
+                    <h4>SS LETTERS</h4>
+                    <p>எஸ்.எஸ் எழுத்துகள்</p>
+                </div>
+            </div>
+
+            <div class="work-item active" data-category="letters">
+                <img src="img/letter2.jpeg"alt="Letter Work">
+                <div class="work-overlay">
+                    <h4>TITANIUM LETTERS</h4>
+                    <p>டைட்டானியம் எழுத்துகள்</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <section class="footer-section" id="contact">
+        <p class="footer-text">To place your order or get a quote!</p>
+       <a href="contact.html"><button class="footer-btn">📞 CONTACT US</button></a>
+        <p class="footer-text" style="margin-top: 30px;">📞 +91 9360508045 | ✉️ nawfalsadique@gmail.com</p>
+        <p class="copyright">© 2025 SABARIN LASER TECH - All Rights Reserved</p>
+    </section>
+
+    <script>
+        function scrollToSection(id) {
+            document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Works Gallery Filter
+        function filterWorks(category) {
+            const workItems = document.querySelectorAll('.work-item');
+            const tabs = document.querySelectorAll('.category-tab');
+            
+            // Update active tab
+            tabs.forEach(tab => tab.classList.remove('active'));
+            event.target.classList.add('active');
+            
+            // Filter work items with animation
+            workItems.forEach(item => {
+                if (category === 'all' || item.dataset.category === category) {
+                    item.classList.add('active');
+                } else {
+                    item.classList.remove('active');
+                }
+            });
+        }
+    </script>
+</body>
+</html>
